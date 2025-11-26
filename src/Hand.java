@@ -16,17 +16,21 @@ public class Hand {
 
     
     public boolean inHand(Card searchCard) {
-        
-        for (int i = 0; i < 5; i++) {
-            
-            if (cards[i].compareTo(searchCard) == 0) {
-                return true;
-            }
+    for (int i = 0; i < 5; i++) {
+
+       
+        if (cards[i].compareTo(searchCard) > 0) {
+            return false;  
         }
 
-        return false;   
+       
+        if (cards[i].compareTo(searchCard) == 0) {
+            return true;
+        }
     }
 
+    return false; 
+}
     
     public String toString() {
         String result = "";
